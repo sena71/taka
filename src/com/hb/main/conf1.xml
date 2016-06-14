@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<import resource="classpath:/com/hb/main/conf2.xml"/>
+	<bean id="listPrinter" class="com.hb.spring.MemberListPrinter">
+		<constructor-arg ref="memberDao"/>
+		<constructor-arg ref="printer"/>
+		<!-- set으로 받아오는 법 -->
+		<!-- <property name="dao" ref="memberDao"></property> -->
+	</bean>
+	<bean id="infoPrinter" class="com.hb.spring.MemberInfoPrinter">
+		<property name="dao" ref="memberDao"></property>
+		<property name="printer" ref="printer"></property>
+	</bean>
+	<bean id="versionPrinter" class="com.hb.spring.VersionPrinter">
+		<!-- <constructor-arg value="4"></conlstructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		 -->
+		 <property name="majorVersion" value="4"></property>
+		 <property name="minorVersion">
+		 	<value>1</value>
+		 </property>
+	</bean>
+</beans>
