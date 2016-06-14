@@ -24,7 +24,7 @@ public class MainForSpring {
 	public static void main(String[] args) throws IOException {
 		/*Scanner scan = new Scanner(System.in);*/
 		ctx = new GenericXmlApplicationContext("classpath:/com/hb/main/conf1.xml"/*,"classpath:/com/hb/main/conf2.xml"*/);
-		System.out.println("SVN을 위한 console");
+		System.out.println("Git 변경 관련 실험 로그.");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		while(true){
 			System.out.println("명령어를 입력하세요");
